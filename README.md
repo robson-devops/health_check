@@ -19,50 +19,51 @@ Execute the script file:
 ```` 
 **_expected outcome_**
 ```` 
-DATE:  21/06/2021
+DATE:  07/02/2021
 
-----------| CONSUMO DE CPU |------------------------------
+----------| CPU INFORMATION |----------------------------------
 
-CPU(s):              1
-average: 0.00, 0.00, 0.00
+CPU(s):                1
+average: 0.34, 0.47, 0.23
 
-----------| CONSUMO DE MEMÓRIA |------------------------------
+----------| MEMORY INFORMATION |-------------------------------
 
-              total        used        free      shared  buff/cache   available
-Mem:           983M        179M        484M        524K        319M        671M
-Swap:            0B          0B          0B
+             total       used       free     shared    buffers     cached
+Mem:          489M       419M        70M       364K        15M       280M
+-/+ buffers/cache:       123M       366M
+Swap:           0B         0B         0B
 
-----------| CONSUMO DO DISCO |------------------------------
+----------| DISC INFORMATION |------------------------------
 
-Tamanho: 10G
-Usado:      1.8G
-Disponível: 8.3G
-Uso%:      18%
+Size: 159G
+Used:      84G
+Avail: 74G
+Use%:      54%
 
-LOGS:
-/var:  22% used
-/opt:  22% used
+LOGS DIRECTORY AND OTHERS:
+/var:  4% used
+/opt:  4% used
 
-----------| PROCESSO EM EXECUÇÃO |------------------------------
+----------| PROCESS INFORMATION |------------------------------
 
-User:root PID:5868
+User:root PID:4325
 
-----------| INFORMAÇÕES DA REDE |------------------------------
+----------| NETWORK INFORMATION |------------------------------
 
-Interface:  inet 172.17.0.1 netmask 255.255.0.0 broadcast 172.17.255.255
+Interfaces:  inet addr:10.0.2.15 Bcast:10.0.2.255 Mask:255.255.255.0 inet6 addr: fe80::a00:27ff:fe5f:bbe6/64 Scope:Link
 DNS:
-nameserver 172.31.0.2
+nameserver 10.0.2.3
 
 ```` 
-Edite o arquivo de profile do usuário, configurando-o conforme abaixo:
+Add the script to the user's bash profile:
 
 ```` 
 
-# vim /home/USUARIO/.bash_profile
+# vim /home/<user>/.bash_profile
   ...
-  /home/USUARIO/verifica_servidor.sh
+  /home/<user>/health_check_linux.sh
 
-# source /home/USUARIO/.bash_profile
+# source /home/<user>/.bash_profile
 ```` 
 
-Todas as vezes que o usuário escolhido acessar o servidor Linux, o script será executado.
+Every time the chosen user accesses the Linux server, the script will be executed😉.
